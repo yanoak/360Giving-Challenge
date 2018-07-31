@@ -139,7 +139,7 @@ body {
   text-anchor: left;
 } 
   
-p.blocktext {
+.blocktext {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
@@ -394,15 +394,28 @@ p.blocktext {
   <br/><small>Comparing Grantmaking to English Indices of Deprivation</small></div>  
 <br/>
   
-<p class="blocktext">What is Lorem Ipsum?</p>
-<p class="blocktext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<h2 class="blocktext">How do we know which districts are in most need of grant money?</h2>
+<p class="blocktext">The Index of Multiple Deprivation tracks various local administration districts across 7 different themes:</p>
+<ul class="blocktext">
+  <li>Income</li>
+  <li>Employment</li>
+  <li>Education, Skills and Training</li>
+  <li>Health Deprivation and Disability</li>
+  <li>Crime</li>
+  <li>Barriers to Housing and Services</li>
+  <li>Living Environment</li>
+</ul>
+  <p class="blocktext">Based on these 7 themes, districts across the UK are given scores. Each of the countries in the UK have a different scoring system and so cross-country comparisons cannot be made, for instance between a district in Scotland and a district in England. Because of that, we choose to only look at districts in England.</p>
 
-<p class="blocktext">Why do we use it?</p>
-<p class="blocktext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+<h2 class="blocktext">Breaking down the GrantNav data in the 7 themes</h2>
+<p class="blocktext">Using keyword seraches in the Title and Description fields on each of the 200,000+ grants on GrantNav, we can match the grant funding that is award to each theme. We then break the total amount awarded for each theme for each district in England.</p>
 
 
-<p class="blocktext">Where does it come from?</p>
-<p class="blocktext">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+<h2 class="blocktext">What do we find?</h2>
+<p class="blocktext">We visualise the data using an interactive map and scatterplot. 
+  Ideally, the scatterplot should show a positive correlation between the amount of deprivation for each district and the total amount of grant funding awarded.</p>
+  
+<p class="blocktext">In most categories, there is a positive relation, but in the themes of "Education, Skills and Training" and "Barriers to Housing and Services", we can see that some of the disticts with higher levels of deprivation are not getting higher levels of funding then the less deprived districts.</p>
 <!--<div id="#vis"></div>-->
 <!--
 <label>
@@ -410,7 +423,8 @@ p.blocktext {
   Hide controls
 </label> 
 -->
-
+<p class="blocktext"><strong>To Interact with the Visualisation:</strong></p>
+<p class="blocktext"><strong>Click on each theme and hover your mouse over the map and dots.</strong></p>
 <br/>
 <div class="buttonsCell">
   <button id="updateButtonIncome" onclick="onButtonClick('income')" class="button" autofocus>Income</button> 
@@ -424,6 +438,9 @@ p.blocktext {
 <br/>
 <svg id="map" width='400' height='550'></svg>
 <svg id="scatter" width='700' height='550'></svg>
+  <br/>
+  <p class="blocktext">All content and code is open source under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons 4.0</a>. All the code is available on <a href='https://github.com/yanoak/360Giving-Challenge'>Github</a>.</p>
+  <p class="blocktext">Created by <a href="https://twitter.com/yanoak">Yan Naung Oak</a> as a entry for the <a href="https://challenge.threesixtygiving.org/">360 Giving Data Visualisation Challenge</a>.</p>
 
 <!--
 <div id="popup" class="popup-wrapper hide">
@@ -884,13 +901,12 @@ function onButtonClick(themeThatWasClicked) {
  
   
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123134174-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-84649961-1', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-123134174-1');
 </script>
